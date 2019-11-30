@@ -1,0 +1,23 @@
+<html>
+
+<body ngl-controller='todo'>
+
+	<h1>Todos</h1>
+	<input type="text" ngl-model='item'>
+	<div>
+			<span ngl-bind='item'></span>
+	</div>
+	
+	
+	<script src="angular-mock.js"></script>
+	<script>
+		Provider.controller('todo',function($scope){
+			$scope.item=''
+			$scope.add = function(){
+
+			}
+		})
+		DOMCompiler.bootstrap()
+	</script>
+</body>
+</html>

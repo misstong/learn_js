@@ -1,0 +1,35 @@
+<html>
+	<body>
+		<h1>To do</h1>
+		<input type="text">
+		<div id='lists'></div>
+	</body>
+	<script>
+		function makeItem(name){
+			var item = document.createElement('div');
+			var check = document.createElement('input');
+			check.type='checkbox';
+			item.appendChild(check);
+			var ele = document.createElement('span');
+			ele.innerText = name;
+			item.appendChild(ele);
+			check.addEventListener('click',function(evt){
+				if (check.value=='on'){
+					ele.innerText += "XXX";
+				}
+			})
+			return item;
+		}
+		var lists = document.getElementById('lists')
+		var input = document.getElementsByTagName('input')[0];
+		input.addEventListener('keydown',function(evt){
+			if (evt.keyCode == 13){
+				var d = makeItem(input.value)
+				lists.appendChild(d);
+				input.value ='';
+				d.addEventListener('',function(){})
+			}
+			
+		})
+	</script>
+</html>
